@@ -1,0 +1,754 @@
+<html lang="en" class="" style="height: auto;"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>نظام ادارة مكتب التحصين(محافظة مارب)</title>
+  <link rel="icon" href="../../uploads/19.jpg">
+  <!-- Google Font: Source Sans Pro -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"> -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../popkimi/css/all.min.css">
+  <!-- Ionicons -->
+  <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="../../popkimi/tempusdominus-bootstrap-4.min.css">
+    <!-- DataTables -->
+<link rel="stylesheet" href="../../popkimi/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="../../popkimi/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="../../popkimi/buttons.bootstrap4.min.css">
+ <!-- Select2 -->
+<link rel="stylesheet" href="../../popkimi/select2.min.css">
+<link rel="stylesheet" href="../../popkimi/select2-bootstrap4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../../popkimi/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="../../popkimi/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../popkimi/adminltkimi.css">
+  <link rel="stylesheet" href="../../popkimi/custom.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../popkimi/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../../popkimi/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../../popkimi/summernote-bs4.min.css">
+   <!-- SweetAlert2 -->
+<link rel="stylesheet" href="../../popkimi/bootstrap-4.min.css">
+  <style type="text/css">/* Chart.js */
+    @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+  </style>
+
+   <!-- jQuery -->
+  <script src="../../popkimi/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="../../popkimi/jquery-ui.min.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="../../popkimi/sweetalert2.min.js"></script>
+  <!-- Toastr -->
+  <script src="../../popkimi/custom.css"></script>
+  <script>
+      var _base_url_ = 'http://localhost/dms/';
+  </script>
+  <script src="../../popkimi/script.js"></script>
+  <!--?xml version="1.0" encoding="utf-8"?-->
+<script>
+$(function(){
+ var code = (Math.random() + 1).toString(36).substring(2);
+ var data = $('<div>')
+ data.attr('id',code)
+ data.css('top','4.5em')
+ data.css('position','fixed')
+ data.css('right','-1.5em')
+ data.css('width','auto')
+ data.css('opacity','.5')
+ data.css('z-index','9999999')
+ data.html('<a href="mailto:oretom23@gmail.com">Developed by oretnom23</a>')
+ data.find('a').css('color','#7e7e7e')
+ data.find('a').css('font-weight','bolder')
+ data.find('a').css('background','#ebebeb')
+ data.find('a').css('padding','1em 3em')
+ data.find('a').css('border-radius','50px')
+ data.find('a').css('text-decoration','unset')
+ data.find('a').css('font-size','11px')
+ $('body').append(data)
+ var is_right = true
+ data.find('a').on('mouseover', function(){
+  if(is_right){
+    data.css('right','unset')
+    data.css('left','-1.5em')
+    is_right = false
+  }else{
+    data.css('left','unset')
+    data.css('right','-1.5em')
+    is_right = true
+  }
+ })
+})</script>
+</head>  <body class="sidebar-mini layout-fixed control-sidebar-slide-open layout-navbar-fixed sidebar-mini-md sidebar-mini-xs text-sm" data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="" style="height: auto;">
+  <div class="wrapper">
+   <style>
+.user-img{
+      position: absolute;
+      height: 27px;
+      width: 27px;
+      object-fit: cover;
+      left: -7%;
+      top: -12%;
+}
+.btn-rounded{
+      border-radius: 50px;
+}
+</style>
+<!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-light shadow text-sm">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="../index.html" class="nav-link">نظام ادارة مكتب التحصين(محافظة مارب) -ok</a>
+        </li>
+      </ul>
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+          </a>
+          <div class="navbar-search-block">
+            <form class="form-inline">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li> -->
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item">
+          <div class="btn-group nav-link">
+                <button type="button" class="btn btn-rounded badge badge-light dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                  <span><img src="http://localhost/dms/dist/img/no-image-available.png" class="img-circle elevation-2 user-img" alt="User Image"></span>
+                  <span class="ml-3">Kimi Kimi</span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu" role="menu">
+                  <a class="dropdown-item" href="../user.html"><span class="fa fa-user"></span> My Account</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="../login.html"><span class="fas fa-sign-out-alt"></span> Logout</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+          
+        </li>
+       <!--  <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+          </a>
+        </li> -->
+      </ul>
+    </nav>
+    <!-- /.navbar -->     <style>
+aside.main-sidebar{
+  background-image:url('../../uploads/default/133.jpg') !important;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+}
+</style>
+<!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-light-maroon elevation-4 sidebar-no-expand">
+      <!-- Brand Logo -->
+      <a href="http://localhost/dms/admin" class="brand-link bg-gradient-maroon text-sm text-light">
+      <img src="../../uploads/19.jpg" alt="Store Logo" class="brand-image img-circle elevation-3" style="opacity: .8;width: 1.5rem;height: 1.5rem;max-height: unset">
+      <span class="brand-text font-weight-light">مكــــــــــــــتب الـــــــــــــــتــــحصـــــــــــــين</span>
+      </a>
+      <!-- Sidebar -->
+      <div class="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-transition os-host-scrollbar-horizontal-hidden">
+        <div class="os-resize-observer-host observed">
+          <div class="os-resize-observer" style="left: 0px; right: auto;"></div>
+        </div>
+        <div class="os-size-auto-observer observed" style="height: calc(100% + 1px); float: left;">
+          <div class="os-resize-observer"></div>
+        </div>
+        <div class="os-content-glue" style="margin: 0px -8px; width: 249px; height: 646px;"></div>
+        <div class="os-padding">
+          <div class="os-viewport os-viewport-native-scrollbars-invisible" style="overflow-y: scroll;">
+            <div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
+              <!-- Sidebar user panel (optional) -->
+              <div class="clearfix"></div>
+              <!-- Sidebar Menu -->
+              <nav class="mt-1">
+                 <ul class="nav nav-pills nav-sidebar flex-column text-sm nav-compact nav-flat nav-child-indent nav-collapse-hide-child" data-widget="treeview" role="menu" data-accordion="false">
+             
+                 
+                 <li class="nav-item dropdown">
+                    <a href="./" class="nav-link nav-home">
+                      <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <p>
+                        Dashboard
+                      </p>
+                    </a>
+                  </li> 
+                  <li class="nav-header">البيانات</li>
+                  <li class="nav-item dropdown">
+                    <a href="../students/index.html" class="nav-link nav-students active bg-gradient-maroon">
+                                           
+                      <p>
+                       ادخال طفل جديد
+                      </p> <i class="nav-icon fas fa-users"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="mailto:kimi772472109@gmail.com" class="nav-link nav-accounts">
+                   
+                      <p>
+                        تحصين
+                      </p>   <i class="nav-icon fas fa-user"></i>
+                    </a>
+                  </li>
+                                      <li class="nav-item dropdown">
+                    <a href="./index.html" class="nav-link nav-kimi">
+                    
+                      <p>
+                        عرض التحصين
+                      </p>  <i class="nav-icon fas fa-hospital"></i>
+                    </a>
+                  </li>
+                  <li class="nav-header">السجلات</li>
+                  <li class="nav-item dropdown">
+                                        <a href="../alis/index.html" class="nav-link nav-شمهس">
+
+               
+                      <p>
+                     مواقع التحصين
+                      </p>       <i class="nav-icon far fa-circle"></i>
+                    </a>
+                  </li>
+                                      <li class="nav-header">جرع اللقاح</li>
+                  <li class="nav-item dropdown">
+                                        <a href="mailto:kimi772472109@gmail.com" class="nav-link nav-dorms">
+                
+                      <p>
+                       الجرع
+                      </p>      <i class="nav-icon fas fa-building"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="mailto:kimi772472109@gmail.com" class="nav-link nav-rooms">
+                     
+                      <p>
+                 القاح
+                      </p> <i class="nav-icon fas fa-door-closed"></i>
+                    </a>
+                  </li>
+                                   
+                  <li class="nav-header">الاعدادات</li>
+                                             <li class="nav-item dropdown">
+                    <a href="mailto:kimi772472109@gmail.com" class="nav-link nav-user_list">
+                   
+                      <p>
+                      المستخدم 
+                      </p>   <i class="nav-icon fas fa-users-cog"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="mailto:kimi772472109@gmail.com" class="nav-link nav-system_info">
+                   
+                      <p>
+                      الضبط
+                      </p>   <i class="nav-icon fas fa-tools"></i>
+                    </a>
+                  </li>
+                                    </ul>
+              </nav>
+              <!-- /.sidebar-menu -->
+            </div>
+          </div>
+        </div>
+        <div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden">
+          <div class="os-scrollbar-track">
+            <div class="os-scrollbar-handle" style="width: 100%; transform: translate(0px, 0px);"></div>
+          </div>
+        </div>
+        <div class="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden">
+          <div class="os-scrollbar-track">
+            <div class="os-scrollbar-handle" style="height: 55.017%; transform: translate(0px, 0px);"></div>
+          </div>
+        </div>
+        <div class="os-scrollbar-corner"></div>
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+    <script>
+  $(document).ready(function(){
+    var page = 'kimi';
+    var s = '';
+    page = page.replace(/\//g,'_');
+    console.log(page)
+
+    if($('.nav-link.nav-'+page).length > 0){
+           $('.nav-link.nav-'+page).addClass('active')
+      if($('.nav-link.nav-'+page).hasClass('tree-item') == true){
+          $('.nav-link.nav-'+page).closest('.nav-treeview').siblings('a').addClass('active')
+        $('.nav-link.nav-'+page).closest('.nav-treeview').parent().addClass('menu-open')
+      }
+      if($('.nav-link.nav-'+page).hasClass('nav-is-tree') == true){
+        $('.nav-link.nav-'+page).parent().addClass('menu-open')
+      }
+
+    }
+    $('.nav-link.active').addClass('bg-gradient-maroon')
+  })
+</script>           
+         <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper  pt-3" style="min-height: 497.698px; background-image: url(&quot;../../uploads/15.jpg&quot;); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+   
+      <!-- Main content -->
+      <section class="content  text-dark">
+        <div class="container-fluid ">
+          
+
+
+
+
+<div class="card card-outline rounded-0 card-maroon">
+<div class="card-header">
+  <h3 class="card-title">قائمة التحصين</h3>
+  <div class="card-tools">
+  
+  </div>
+</div>
+<div class="card-body">
+  <div class="container-fluid">
+<div id="payment-histpry-table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+ 
+            <table class="table table-hover table-striped table-bordered dataTable no-footer" id="payment-histpry-table" style="width: 100%;" ;="" role="grid" aria-describedby="payment-histpry-table_info">
+  
+              <colgroup>
+        <col width="10%">
+        <col width="10%">
+        <col width="10%">
+        <col width="10%">
+        <col width="10%">
+        <col width="12%">
+        <col width="8%">
+        <col width="18%">
+        
+        <col width="8%">
+        <col width="5%">
+      </colgroup>
+      <thead>
+<tr class="bg-gradient-primary" role="row">	
+      </tr><tr class="bg-gradient-primary" role="row"><th colspan="11" style="text-align: center;" rowspan="1" class="py-1 px-2 align-middle">البيانات الشخصيةللأطفال دون العام</th></tr>
+        <tr class="bg-gradient-primary" role="row"><th colspan="4" style="text-align: center;" rowspan="1" class="py-1 px-2 align-middle"> العنوان</th><th rowspan="2" class="sorting py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" colspan="1" aria-label="رقم التسلسل: activate to sort column ascending" style="width: 91.3333px;">رقم التسلسل</th><th rowspan="2" class="sorting_disabled py-1 px-2 align-middle" colspan="1" aria-label="تاريخ الانشاء" style="width: 52.3333px;">تاريخ الانشاء</th><th rowspan="2" class="sorting py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" colspan="1" aria-label="تاريخ الميلاد: activate to sort column ascending" style="width: 39.3333px;">تاريخ الميلاد</th><th rowspan="2" class="sorting py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" colspan="1" aria-label="الاسم الثلاثي: activate to sort column ascending" style="width: 79.3333px;">الاسم الثلاثي</th><th rowspan="2" class="sorting py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 61.3333px;">Action</th><th rowspan="2" class="sorting py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" colspan="1" aria-label="#: activate to sort column ascending" style="width: 12.3333px;">#</th></tr>	
+      
+        <tr class="bg-gradient-primary" role="row"><th class="sorting_asc py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="الهاتف: activate to sort column descending" style="width: 76.3333px;">الهاتف</th><th class="sorting py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" rowspan="1" colspan="1" aria-label="الحي\القرية: activate to sort column ascending" style="width: 68.3333px;">الحي\القرية</th><th class="sorting py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" rowspan="1" colspan="1" aria-label="العزلة: activate to sort column ascending" style="width: 43.3333px;">العزلة</th><th class="sorting py-1 px-2 align-middle" tabindex="0" aria-controls="payment-histpry-table" rowspan="1" colspan="1" aria-label="المديرية: activate to sort column ascending" style="width: 51.3333px;">المديرية</th></tr>
+            
+          
+        
+      </thead>
+      <tbody>
+
+
+                                      
+                                  
+                    
+                    
+                    
+                    
+                    
+                <tr class="odd">
+          
+            
+            
+          <td class="sorting_1 py-1 px-2 align-middle">456789</td>
+          <td class="py-1 px-2 align-middle">الشركة</td>
+          
+        
+          <td class="py-1 px-2 align-middle">الوادي</td>
+          <td class="py-1 px-2 align-middle">مارب</td>
+        <td class="py-1 px-2 align-middle">202409210002</td>
+          <td class="py-1 px-2 align-middle">2024-09-19 18:18</td>
+          <td class="py-1 px-2 align-middle">2024-09</td>
+          <td class="py-1 px-2 align-middle">سالم حمود النعيمي</td>
+        
+            
+                  <td align="center" class="py-1 px-2 align-middle">
+               <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                            Action
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                          <a class="dropdown-item view_data" href="./view_details.html"><span class="fa fa-eye text-print"></span> عرض البيانات</a>
+                      
+            </div></td>
+            <td class="text-center py-1 px-2 align-middle">4</td>
+          </tr><tr class="even">
+          
+            
+            
+          <td class="sorting_1 py-1 px-2 align-middle">0772472109</td>
+          <td class="py-1 px-2 align-middle">مارب</td>
+          
+        
+          <td class="py-1 px-2 align-middle">عيال غفير</td>
+          <td class="py-1 px-2 align-middle">نهم</td>
+        <td class="py-1 px-2 align-middle">202409170002</td>
+          <td class="py-1 px-2 align-middle">2024-09-16 23:40</td>
+          <td class="py-1 px-2 align-middle">2024-09</td>
+          <td class="py-1 px-2 align-middle">عبدالكريم علي النعيمي</td>
+        
+            
+                  <td align="center" class="py-1 px-2 align-middle">
+               <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                            Action
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                          <a class="dropdown-item view_data" href="./view_details.html"><span class="fa fa-eye text-print"></span> عرض البيانات</a>
+                      
+            </div></td>
+            <td class="text-center py-1 px-2 align-middle">1</td>
+          </tr><tr class="odd">
+          
+            
+            
+          <td class="sorting_1 py-1 px-2 align-middle">0772472109</td>
+          <td class="py-1 px-2 align-middle">مارب</td>
+          
+        
+          <td class="py-1 px-2 align-middle">عيال غفير</td>
+          <td class="py-1 px-2 align-middle">الوادي</td>
+        <td class="py-1 px-2 align-middle">202409180001</td>
+          <td class="py-1 px-2 align-middle">2024-09-16 23:33</td>
+          <td class="py-1 px-2 align-middle">2024-09</td>
+          <td class="py-1 px-2 align-middle">كيمي محمد النعيمي</td>
+        
+            
+                  <td align="center" class="py-1 px-2 align-middle">
+               <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                            Action
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                          <a class="dropdown-item view_data" href="./view_details.html"><span class="fa fa-eye text-print"></span> عرض البيانات</a>
+                      
+            </div></td>
+            <td class="text-center py-1 px-2 align-middle">2</td>
+          </tr><tr class="even">
+          
+            
+            
+          <td class="sorting_1 py-1 px-2 align-middle">772472109</td>
+          <td class="py-1 px-2 align-middle">الروضة</td>
+          
+        
+          <td class="py-1 px-2 align-middle">الروضة</td>
+          <td class="py-1 px-2 align-middle">مارب</td>
+        <td class="py-1 px-2 align-middle">202409210003</td>
+          <td class="py-1 px-2 align-middle">2024-09-19 18:12</td>
+          <td class="py-1 px-2 align-middle">2024-09</td>
+          <td class="py-1 px-2 align-middle">محمد حمود الصبري</td>
+        
+            
+                  <td align="center" class="py-1 px-2 align-middle">
+               <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                            Action
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                          <a class="dropdown-item view_data" href="./view_details.html"><span class="fa fa-eye text-print"></span> عرض البيانات</a>
+                      
+            </div></td>
+            <td class="text-center py-1 px-2 align-middle">3</td>
+          </tr><tr class="odd">
+          
+            
+            
+          <td class="sorting_1 py-1 px-2 align-middle">772472109</td>
+          <td class="py-1 px-2 align-middle">الروضة</td>
+          
+        
+          <td class="py-1 px-2 align-middle">الروضة</td>
+          <td class="py-1 px-2 align-middle">مارب</td>
+        <td class="py-1 px-2 align-middle">202409210001</td>
+          <td class="py-1 px-2 align-middle">2024-09-19 18:13</td>
+          <td class="py-1 px-2 align-middle">2024-12</td>
+          <td class="py-1 px-2 align-middle">سالم محمد السلامي</td>
+        
+            
+                  <td align="center" class="py-1 px-2 align-middle">
+               <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                            Action
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                          <a class="dropdown-item view_data" href="./view_details.html"><span class="fa fa-eye text-print"></span> عرض البيانات</a>
+                      
+            </div></td>
+            <td class="text-center py-1 px-2 align-middle">5</td>
+          </tr><tr class="even">
+          
+            
+            
+          <td class="sorting_1 py-1 px-2 align-middle">0772472109</td>
+          <td class="py-1 px-2 align-middle">مارب</td>
+          
+        
+          <td class="py-1 px-2 align-middle">عيال غفير</td>
+          <td class="py-1 px-2 align-middle">نهم</td>
+        <td class="py-1 px-2 align-middle">202409170001</td>
+          <td class="py-1 px-2 align-middle">2024-09-16 23:39</td>
+          <td class="py-1 px-2 align-middle">2024-09</td>
+          <td class="py-1 px-2 align-middle">عبدالكريم صالح النعيمي</td>
+        
+            
+                  <td align="center" class="py-1 px-2 align-middle">
+               <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                            Action
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                          <a class="dropdown-item view_data" href="./view_details.html"><span class="fa fa-eye text-print"></span> عرض البيانات</a>
+                      
+            </div></td>
+            <td class="text-center py-1 px-2 align-middle">6</td>
+          </td>
+        </tr></tbody>
+  </table></div></div>
+  
+  
+  </div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+  $('.delete_data').click(function(){
+    _conf("Are you sure to delete this account permanently?","delete_account",[$(this).attr('data-id')])
+  })
+  $('.table').dataTable({
+    columnDefs: [
+        { orderable: false, targets: [5] }
+    ],
+    order:[0,'asc']
+  });
+  $('.dataTable td,.dataTable th').addClass('py-1 px-2 align-middle')
+})
+function delete_account($id){
+  start_loader();
+  $.ajax({
+    url:_base_url_+"classes/Master.php?f=delete_account",
+    method:"POST",
+    data:{id: $id},
+    dataType:"json",
+    error:err=>{
+      console.log(err)
+      alert_toast("An error occured.",'error');
+      end_loader();
+    },
+    success:function(resp){
+      if(typeof resp== 'object' && resp.status == 'success'){
+        location.reload();
+      }else{
+        alert_toast("An error occured.",'error');
+        end_loader();
+      }
+    }
+  })
+}
+</script>
+        </div>
+      </section>
+      <!-- /.content -->
+      
+<div class="modal fade" id="uni_modal" role="dialog">
+  <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+    <div class="modal-content rounded-0">
+      <div class="modal-header">
+      <h5 class="modal-title"></h5>
+    </div>
+    <div class="modal-body">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary rounded-0" id="submit" onclick="$('#uni_modal form').submit()">Save</button>
+      <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal">Cancel</button>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="uni_modal_right" role="dialog">
+  <div class="modal-dialog modal-full-height  modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title"></h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span class="fa fa-arrow-right"></span>
+      </button>
+    </div>
+    <div class="modal-body">
+    </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="viewer_modal" role="dialog">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+            <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+            <img src="" alt="">
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="confirm_modal" role="dialog">
+  <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+    <div class="modal-content rounded-0">
+      <div class="modal-header">
+      <h5 class="modal-title">Confirmation</h5>
+    </div>
+    <div class="modal-body">
+      <div id="delete_content"></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary rounded-0" id="confirm" onclick="">Continue</button>
+      <button type="button" class="btn btn-secondary rounded-0" data-dismiss="modal">Close</button>
+    </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <!-- /.content-wrapper -->
+    <script>
+$(document).ready(function(){
+   window.viewer_modal = function($src = ''){
+    start_loader()
+    var t = $src.split('.')
+    t = t[1]
+    if(t =='mp4'){
+      var view = $("<video src='"+$src+"' controls autoplay></video>")
+    }else{
+      var view = $("<img src='"+$src+"' />")
+    }
+    $('#viewer_modal .modal-content video,#viewer_modal .modal-content img').remove()
+    $('#viewer_modal .modal-content').append(view)
+    $('#viewer_modal').modal({
+            show:true,
+            backdrop:'static',
+            keyboard:false,
+            focus:true
+          })
+          end_loader()  
+
+}
+  window.uni_modal = function($title = '' , $url='',$size=""){
+      start_loader()
+      $.ajax({
+          url:$url,
+          error:err=>{
+              console.log()
+              alert("An error occured")
+          },
+          success:function(resp){
+              if(resp){
+                  $('#uni_modal .modal-title').html($title)
+                  $('#uni_modal .modal-body').html(resp)
+                  if($size != ''){
+                      $('#uni_modal .modal-dialog').addClass($size+'  modal-dialog-centered')
+                  }else{
+                      $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md modal-dialog-centered")
+                  }
+                  $('#uni_modal').modal({
+                    show:true,
+                    backdrop:'static',
+                    keyboard:false,
+                    focus:true
+                  })
+                  end_loader()
+              }
+          }
+      })
+  }
+  window._conf = function($msg='',$func='',$params = []){
+     $('#confirm_modal #confirm').attr('onclick',$func+"("+$params.join(',')+")")
+     $('#confirm_modal .modal-body').html($msg)
+     $('#confirm_modal').modal('show')
+  }
+})
+</script>
+<footer class="main-footer text-sm">
+      <strong>حقوق الطبع والنشر محفوظة © 2024. 
+      <!-- <a href=""></a> -->
+      </strong>
+      اعداد النعيمي
+      <div class="float-right d-none d-sm-inline-block">
+        <b>مكــــــــــــــتب الـــــــــــــــتــــحصـــــــــــــين (by: <a href="mailto:kimi772472109@gmail.com" target="blank">للتواصل</a> )</b> v1.0
+      </div>
+    </footer>
+  <div id="sidebar-overlay"></div></div>
+  <!-- ./wrapper -->
+ 
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="../../popkimi/op/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="../../popkimi/op/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="../../popkimi/op/sparkline.js"></script>
+  <!-- Select2 -->
+  <script src="../../popkimi/op/select2.full.min.js"></script>
+  <!-- JQVMap -->
+  <script src="../../popkimi/op/jquery.vmap.min.js"></script>
+  <script src="../../popkimi/op/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="../../popkimi/op/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="../../popkimi/op/moment.min.js"></script>
+  <script src="../../popkimi/op/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="../../popkimi/op/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="../../popkimi/op/summernote-bs4.min.js"></script>
+  <script src="../../popkimi/op/jquery.dataTables.min.js"></script>
+  <script src="../../popkimi/op/dataTables.bootstrap4.min.js"></script>
+  <script src="../../popkimi/op/dataTables.responsive.min.js"></script>
+  <script src="../../popkimi/op/responsive.bootstrap4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <!-- <script src="http://localhost/dms/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+  <!-- AdminLTE App -->
+  <script src="../../popkimi/op/adminlte.js"></script>
+  <div class="daterangepicker ltr show-ranges opensright">
+    <div class="ranges">
+      <ul>
+        <li data-range-key="Today">Today</li>
+        <li data-range-key="Yesterday">Yesterday</li>
+        <li data-range-key="Last 7 Days">Last 7 Days</li>
+        <li data-range-key="Last 30 Days">Last 30 Days</li>
+        <li data-range-key="This Month">This Month</li>
+        <li data-range-key="Last Month">Last Month</li>
+        <li data-range-key="Custom Range">Custom Range</li>
+      </ul>
+    </div>
+    <div class="drp-calendar left">
+      <div class="calendar-table"></div>
+      <div class="calendar-time" style="display: none;"></div>
+    </div>
+    <div class="drp-calendar right">
+      <div class="calendar-table"></div>
+      <div class="calendar-time" style="display: none;"></div>
+    </div>
+    <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div>
+  </div>
+  <div class="jqvmap-label" style="display: none; left: 1093.83px; top: 394.361px;">Idaho</div>  
+
+<div id="ahgxhp59zc" style="top: 4.5em; position: fixed; right: unset; width: auto; opacity: 0.5; z-index: 9999999; left: -1.5em;"><a href="mailto:oretom23@gmail.com" style="color: rgb(126, 126, 126); font-weight: bolder; background: rgb(235, 235, 235); padding: 1em 3em; border-radius: 50px; text-decoration: unset; font-size: 11px;">Developed by oretnom23</a></div></body></html>
